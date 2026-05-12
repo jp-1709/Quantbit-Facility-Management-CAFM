@@ -1,0 +1,390 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "field:staff_code",
+ "creation": "2026-04-09 15:37:07.624585",
+ "description": "FM technician or sub-contractor resource available for assignment.",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_general",
+  "staff_code",
+  "branch_code",
+  "branch_name",
+  "col_break_1",
+  "resource_name",
+  "profile_image",
+  "sec_designation",
+  "designation",
+  "department",
+  "col_break_2",
+  "employment_type",
+  "ps_type",
+  "supervisor_code",
+  "supervisor_name",
+  "supervised_technicians_section",
+  "technicians",
+  "tab_skills",
+  "sec_skills",
+  "skills",
+  "sec_coverage",
+  "primary_area_group",
+  "col_break_3",
+  "secondary_area_groups",
+  "tab_operations",
+  "sec_shift",
+  "shift",
+  "allocation_mode",
+  "col_break_4",
+  "is_pda_user",
+  "sec_contact",
+  "phone",
+  "col_break_5",
+  "email",
+  "user_id",
+  "sec_status",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab_general",
+   "fieldtype": "Tab Break",
+   "label": "General Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "staff_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Staff Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "branch_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "reqd": 0
+  },
+  {
+   "fetch_from": "branch_code.branch_name",
+   "fieldname": "branch_name",
+   "fieldtype": "Data",
+   "label": "Branch Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "resource_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Resource Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "profile_image",
+   "fieldtype": "Attach Image",
+   "label": "Profile Image"
+  },
+  {
+   "fieldname": "sec_designation",
+   "fieldtype": "Section Break",
+   "label": "Designation & Department"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Designation",
+   "options": "\nSupervisor\nLead Technician\nTechnician\nSub-Contractor\nHelpers\nDriver\nAdmin Staff\nHSEQ Officer\nSite Coordinator",
+   "reqd": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Department",
+   "options": "\nTechnical\nSoft Services\nOperations\nManagement\nAdmin\nHSEQ"
+  },
+  {
+   "fieldname": "col_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "employment_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Employment Type",
+   "options": "\nStaff\nSubcontractor\nCasual\nThird Party"
+  },
+  {
+   "fieldname": "ps_type",
+   "fieldtype": "Select",
+   "label": "Primary/Secondary Type",
+   "options": "\nPrimary\nSecondary\nFloat"
+  },
+  {
+   "depends_on": "eval:doc.designation !== 'Supervisor'",
+   "description": "Supervisor responsible for this technician. Set on Technician records to link them to their Supervisor.",
+   "fieldname": "supervisor_code",
+   "fieldtype": "Link",
+   "in_list_view": 0,
+   "in_standard_filter": 1,
+   "label": "Supervisor",
+   "options": "Resource"
+  },
+  {
+   "fetch_from": "supervisor_code.resource_name",
+   "fieldname": "supervisor_name",
+   "fieldtype": "Data",
+   "label": "Supervisor Name",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.designation === 'Supervisor'",
+   "fieldname": "supervised_technicians_section",
+   "fieldtype": "Section Break",
+   "label": "Supervised Technicians"
+  },
+  {
+   "depends_on": "eval:doc.designation === 'Supervisor'",
+   "fieldname": "technicians",
+   "fieldtype": "Table",
+   "label": "Technicians",
+   "options": "Resource Technician"
+  },
+  {
+   "fieldname": "tab_skills",
+   "fieldtype": "Tab Break",
+   "label": "Skills & Coverage"
+  },
+  {
+   "fieldname": "sec_skills",
+   "fieldtype": "Section Break",
+   "label": "Service Skills"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "fieldname": "skills",
+   "fieldtype": "Table",
+   "label": "Skills & Certifications",
+   "options": "Resource Skill"
+  },
+  {
+   "fieldname": "sec_coverage",
+   "fieldtype": "Section Break",
+   "label": "Area Coverage"
+  },
+  {
+   "fieldname": "primary_area_group",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Primary Area Group",
+   "options": "Area Group"
+  },
+  {
+   "fieldname": "col_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Comma-separated area group codes",
+   "fieldname": "secondary_area_groups",
+   "fieldtype": "Small Text",
+   "label": "Secondary Area Groups"
+  },
+  {
+   "fieldname": "tab_operations",
+   "fieldtype": "Tab Break",
+   "label": "Operations"
+  },
+  {
+   "fieldname": "sec_shift",
+   "fieldtype": "Section Break",
+   "label": "Shift & Allocation"
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Shift",
+   "options": "\nDay Shift\nNight Shift\n24 Hours Shift\nRotating"
+  },
+  {
+   "fieldname": "allocation_mode",
+   "fieldtype": "Select",
+   "label": "Allocation Mode",
+   "options": "\nManual\nAuto\nPool"
+  },
+  {
+   "fieldname": "col_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "description": "Resource uses mobile app for WO updates",
+   "fieldname": "is_pda_user",
+   "fieldtype": "Check",
+   "label": "Is Mobile/PDA User"
+  },
+  {
+   "fieldname": "sec_contact",
+   "fieldtype": "Section Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "col_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "description": "Link this resource to a Frappe system user for login-based data scoping.",
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "label": "System User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "sec_status",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  }
+ ],
+ "links": [],
+ "modified": "2026-05-11 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Asset",
+ "name": "Resource",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Super Admin",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Management Director",
+   "submit": 0,
+   "write": 0
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Head Operations",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Regional Manager",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Supervisor",
+   "write": 0
+  },
+  {
+   "read": 1,
+   "role": "Technician",
+   "write": 0
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "resource_name,designation,staff_code",
+ "sort_field": "resource_name",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "resource_name",
+ "track_changes": 1
+}

@@ -1,0 +1,412 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "field:property_code",
+ "creation": "2026-04-09 12:05:46.679192",
+ "description": "Physical property/building under FM contract. Top-level location entity.",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_general",
+  "property_code",
+  "col_break_1",
+  "property_name",
+  "sec_classification",
+  "property_type",
+  "business_type",
+  "col_break_2",
+  "gfa_sqm",
+  "floors",
+  "tab_location",
+  "sec_hierarchy",
+  "area_code",
+  "area_name",
+  "branch_code",
+  "branch_name",
+  "col_break_3",
+  "city_code",
+  "col_break_6",
+  "customer_code",
+  "customer_name",
+  "sec_gps",
+  "gps_lat",
+  "col_break_4",
+  "gps_long",
+  "sec_contact",
+  "location_contact",
+  "contact_phone",
+  "tab_contract",
+  "sec_client",
+  "client_code",
+  "client_name",
+  "col_break_5",
+  "contract_code",
+  "sec_status",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab_general",
+   "fieldtype": "Tab Break",
+   "label": "General Details"
+  },
+  {
+   "bold": 1,
+   "description": "e.g. P10001",
+   "fieldname": "property_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Property Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "property_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Property Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_classification",
+   "fieldtype": "Section Break",
+   "label": "Classification"
+  },
+  {
+   "fieldname": "property_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Property Type",
+   "options": "\nHeadquarters\nBranch\nData Centre\nWarehouse\nRemote ATM Site\nOffice\nATM Kiosk\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "business_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Business Type",
+   "options": "\nBank HQ Areas\nBank Branch Areas\nBank Staff Areas\nBank Infrastructure Areas\nBank ATM Areas\nData Centre Areas\nOther"
+  },
+  {
+   "fieldname": "col_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Gross Floor Area in square metres",
+   "fieldname": "gfa_sqm",
+   "fieldtype": "Float",
+   "label": "GFA (sqm)"
+  },
+  {
+   "fieldname": "floors",
+   "fieldtype": "Int",
+   "label": "Floors"
+  },
+  {
+   "fieldname": "tab_location",
+   "fieldtype": "Tab Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "sec_hierarchy",
+   "fieldtype": "Section Break",
+   "label": "Area Hierarchy"
+  },
+  {
+   "fieldname": "area_code",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Area Code",
+   "options": "Area",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "area_code.area_name",
+   "fieldname": "area_name",
+   "fieldtype": "Data",
+   "label": "Area Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "area_code.branch_code",
+   "fieldname": "branch_code",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "area_code.branch_name",
+   "fieldname": "branch_name",
+   "fieldtype": "Data",
+   "label": "Branch Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "area_code.city_code",
+   "fieldname": "city_code",
+   "fieldtype": "Link",
+   "label": "City Code",
+   "options": "City",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customers",
+   "search_index": 1
+  },
+  {
+   "fetch_from": "customer_code.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_gps",
+   "fieldtype": "Section Break",
+   "label": "GPS Coordinates"
+  },
+  {
+   "fieldname": "gps_lat",
+   "fieldtype": "Float",
+   "label": "GPS Lat",
+   "precision": "7"
+  },
+  {
+   "fieldname": "col_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gps_long",
+   "fieldtype": "Float",
+   "label": "GPS Long",
+   "precision": "7"
+  },
+  {
+   "fieldname": "sec_contact",
+   "fieldtype": "Section Break",
+   "label": "Location Contact"
+  },
+  {
+   "fieldname": "location_contact",
+   "fieldtype": "Data",
+   "label": "Location Contact"
+  },
+  {
+   "fieldname": "contact_phone",
+   "fieldtype": "Data",
+   "label": "Contact Phone"
+  },
+  {
+   "fieldname": "tab_contract",
+   "fieldtype": "Tab Break",
+   "label": "Contract & Client"
+  },
+  {
+   "fieldname": "sec_client",
+   "fieldtype": "Section Break",
+   "label": "Client"
+  },
+  {
+   "fieldname": "client_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Client Code",
+   "options": "Client",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "client_code.client_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "label": "Client Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_code",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Contract Code",
+   "options": "FM Contract"
+  },
+  {
+   "fieldname": "sec_status",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  }
+ ],
+ "links": [],
+ "modified": "2026-04-24 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Asset",
+ "name": "Property",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Super Admin",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Management Director",
+   "submit": 0,
+   "write": 0
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Head Operations",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Regional Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Supervisor",
+   "submit": 0,
+   "write": 0
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Technician",
+   "submit": 0,
+   "write": 0
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Helpdesk",
+   "submit": 0,
+   "write": 0
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "property_name,client_code",
+ "sort_field": "property_code",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "property_name",
+ "track_changes": 1
+}

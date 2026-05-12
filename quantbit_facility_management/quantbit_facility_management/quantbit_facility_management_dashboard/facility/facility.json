@@ -1,0 +1,64 @@
+{
+ "cards": [
+  {
+   "card": "Active Work Order"
+  },
+  {
+   "card": "SLA Compalince"
+  },
+  {
+   "card": "PM Completion"
+  },
+  {
+   "card": "Assets Health"
+  },
+  {
+   "card": "Open SRS"
+  },
+  {
+   "card": "Technicians"
+  },
+  {
+   "card": "Total Assets -1"
+  },
+  {
+   "card": "PPM Overdue"
+  },
+  {
+   "card": "Criical WOs"
+  }
+ ],
+ "charts": [
+  {
+   "width": "Half"
+  },
+  {
+   "chart": "Work Order Created Vs Resolved",
+   "width": "Half"
+  },
+  {
+   "chart": "Assets Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Work Order By status",
+   "width": "Half"
+  },
+  {
+   "chart": "PPM Progress",
+   "width": "Half"
+  }
+ ],
+ "creation": "2026-04-30 11:37:57.314951",
+ "dashboard_name": "Facility",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2026-05-07 14:17:55.034793",
+ "modified_by": "shrutika.adhav@erpdata.in",
+ "module": "Quantbit Facility Management",
+ "name": "Facility",
+ "owner": "Administrator"
+}

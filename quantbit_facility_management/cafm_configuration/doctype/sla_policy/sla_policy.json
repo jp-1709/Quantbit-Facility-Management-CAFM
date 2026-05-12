@@ -1,0 +1,340 @@
+{
+ "actions": [],
+ "autoname": "field:policy_name",
+ "creation": "2026-04-07 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sec_zcmzp",
+  "policy_name",
+  "policy_code",
+  "col_voxaj",
+  "description",
+  "tab_bycpw",
+  "sec_gbqir",
+  "response_time_critical",
+  "response_time_high",
+  "col_yqrmw",
+  "response_time_medium",
+  "response_time_low",
+  "tab_nsfpw",
+  "sec_zgtpp",
+  "resolution_time_critical",
+  "resolution_time_high",
+  "col_xfwwq",
+  "resolution_time_medium",
+  "resolution_time_low",
+  "tab_kcovv",
+  "sec_kyfqk",
+  "escalation_contacts"
+ ],
+ "fields": [
+  {
+   "fieldname": "sec_zcmzp",
+   "fieldtype": "Section Break",
+   "label": "Identity"
+  },
+  {
+   "bold": 1,
+   "fieldname": "policy_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Policy Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "policy_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Policy Code"
+  },
+  {
+   "fieldname": "col_voxaj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "tab_bycpw",
+   "fieldtype": "Tab Break",
+   "label": "Response Targets"
+  },
+  {
+   "fieldname": "sec_gbqir",
+   "fieldtype": "Section Break",
+   "label": "Response Time (Hours)"
+  },
+  {
+   "default": "1",
+   "fieldname": "response_time_critical",
+   "fieldtype": "Float",
+   "label": "Critical Priority (hrs)"
+  },
+  {
+   "default": "4",
+   "fieldname": "response_time_high",
+   "fieldtype": "Float",
+   "label": "High Priority (hrs)"
+  },
+  {
+   "fieldname": "col_yqrmw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "8",
+   "fieldname": "response_time_medium",
+   "fieldtype": "Float",
+   "label": "Medium Priority (hrs)"
+  },
+  {
+   "default": "24",
+   "fieldname": "response_time_low",
+   "fieldtype": "Float",
+   "label": "Low Priority (hrs)"
+  },
+  {
+   "fieldname": "tab_nsfpw",
+   "fieldtype": "Tab Break",
+   "label": "Resolution Targets"
+  },
+  {
+   "fieldname": "sec_zgtpp",
+   "fieldtype": "Section Break",
+   "label": "Resolution Time (Hours)"
+  },
+  {
+   "default": "4",
+   "fieldname": "resolution_time_critical",
+   "fieldtype": "Float",
+   "label": "Critical Priority (hrs)"
+  },
+  {
+   "default": "24",
+   "fieldname": "resolution_time_high",
+   "fieldtype": "Float",
+   "label": "High Priority (hrs)"
+  },
+  {
+   "fieldname": "col_xfwwq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "72",
+   "fieldname": "resolution_time_medium",
+   "fieldtype": "Float",
+   "label": "Medium Priority (hrs)"
+  },
+  {
+   "default": "120",
+   "fieldname": "resolution_time_low",
+   "fieldtype": "Float",
+   "label": "Low Priority (hrs)"
+  },
+  {
+   "fieldname": "tab_kcovv",
+   "fieldtype": "Tab Break",
+   "label": "Escalation Contacts"
+  },
+  {
+   "fieldname": "sec_kyfqk",
+   "fieldtype": "Section Break",
+   "label": "Escalation Contacts"
+  },
+  {
+   "description": "Notified on SLA breach per trigger hours",
+   "fieldname": "escalation_contacts",
+   "fieldtype": "Table",
+   "label": "Escalation Contacts",
+   "options": "Escalation Contact"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-04-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CAFM Configuration",
+ "name": "SLA Policy",
+ "naming_rule": "By naming_series field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Super Admin",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Management Director",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Head Operations",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Regional Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Supervisor",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Technician",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Helpdesk",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Client Admin",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Client User",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vendor Contractor",
+   "submit": 0,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "policy_name",
+ "track_changes": 1
+}

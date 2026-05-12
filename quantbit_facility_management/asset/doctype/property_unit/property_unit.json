@@ -1,0 +1,522 @@
+{
+ "actions": [],
+ "autoname": "field:unit_number",
+ "creation": "2026-04-07 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_xyjiu",
+  "sec_lqexy",
+  "unit_number",
+  "property",
+  "col_dbooa",
+  "floor",
+  "property_category",
+  "sec_fwfct",
+  "usage_type",
+  "sub_type",
+  "col_lhvce",
+  "furnished_status",
+  "status",
+  "sec_xpjqk",
+  "area_sqft",
+  "area_sqm",
+  "col_qmzth",
+  "bedrooms",
+  "bathrooms",
+  "parking_spaces",
+  "tab_trdxo",
+  "sec_mdkvl",
+  "asking_rent_annual",
+  "last_agreed_rent",
+  "col_dduke",
+  "market_rent_benchmark",
+  "service_charge_annual",
+  "sec_izstq",
+  "is_vat_applicable",
+  "security_deposit_months",
+  "tab_dxbek",
+  "sec_tsuzm",
+  "current_tenant",
+  "current_lease",
+  "col_squyk",
+  "vacancy_since",
+  "days_vacant",
+  "sec_gbrwb",
+  "open_service_requests",
+  "last_maintenance_date",
+  "col_bdwts",
+  "total_revenue_ytd",
+  "maintenance_cost_ytd",
+  "tab_ezjdd",
+  "sec_dresz",
+  "ejari_unit_number",
+  "dewa_account_number",
+  "col_xsanc",
+  "municipality_unit_code",
+  "tab_jawbl",
+  "sec_nhmss",
+  "unit_photos",
+  "sec_iixip",
+  "unit_parking_bays"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab_xyjiu",
+   "fieldtype": "Tab Break",
+   "label": "Identity & Location"
+  },
+  {
+   "fieldname": "sec_lqexy",
+   "fieldtype": "Section Break",
+   "label": "Unit Identity"
+  },
+  {
+   "bold": 1,
+   "description": "e.g. PROP-101",
+   "fieldname": "unit_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Unit Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "property",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Property",
+   "options": "Property",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_dbooa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Filter by property",
+   "fieldname": "floor",
+   "fieldtype": "Link",
+   "label": "Floor",
+   "options": "Property Floor"
+  },
+  {
+   "description": "Fetched from Property",
+   "fieldname": "property_category",
+   "fieldtype": "Select",
+   "label": "Property Category",
+   "options": "Residential\nCommercial\nIndustrial\nMixed-Use\nShort-Term Rental",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_fwfct",
+   "fieldtype": "Section Break",
+   "label": "Unit Classification"
+  },
+  {
+   "fieldname": "usage_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Usage Type",
+   "options": "Residential\nCommercial\nIndustrial\nShort-Term Rental\nStorage\nParking\nCommon Area",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sub_type",
+   "fieldtype": "Select",
+   "label": "Sub-Type",
+   "options": "\nStudio\n1 Bed\n2 Bed\n3 Bed\nPenthouse\nOffice\nRetail Shop\nWarehouse\nLab\nServiced Apt"
+  },
+  {
+   "fieldname": "col_lhvce",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "furnished_status",
+   "fieldtype": "Select",
+   "label": "Furnished Status",
+   "options": "\nUnfurnished\nSemi-Furnished\nFully Furnished"
+  },
+  {
+   "bold": 1,
+   "default": "Vacant",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Vacant\nOccupied\nReserved\nUnder Maintenance\nUnder Renovation\nDecommissioned",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_xpjqk",
+   "fieldtype": "Section Break",
+   "label": "Physical Dimensions"
+  },
+  {
+   "fieldname": "area_sqft",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Area (sqft)"
+  },
+  {
+   "description": "Auto-calc: area_sqft \u00d7 0.0929",
+   "fieldname": "area_sqm",
+   "fieldtype": "Float",
+   "label": "Area (sqm)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_qmzth",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bedrooms",
+   "fieldtype": "Int",
+   "label": "Bedrooms"
+  },
+  {
+   "fieldname": "bathrooms",
+   "fieldtype": "Float",
+   "label": "Bathrooms"
+  },
+  {
+   "default": "0",
+   "fieldname": "parking_spaces",
+   "fieldtype": "Int",
+   "label": "Parking Spaces"
+  },
+  {
+   "fieldname": "tab_trdxo",
+   "fieldtype": "Tab Break",
+   "label": "Financials"
+  },
+  {
+   "fieldname": "sec_mdkvl",
+   "fieldtype": "Section Break",
+   "label": "Rental Pricing"
+  },
+  {
+   "fieldname": "asking_rent_annual",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Asking Rent (Annual)"
+  },
+  {
+   "fieldname": "last_agreed_rent",
+   "fieldtype": "Currency",
+   "label": "Last Agreed Rent"
+  },
+  {
+   "fieldname": "col_dduke",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "market_rent_benchmark",
+   "fieldtype": "Currency",
+   "label": "Market Rent Benchmark"
+  },
+  {
+   "fieldname": "service_charge_annual",
+   "fieldtype": "Currency",
+   "label": "Service Charge (Annual)"
+  },
+  {
+   "fieldname": "sec_izstq",
+   "fieldtype": "Section Break",
+   "label": "Financial Settings"
+  },
+  {
+   "default": "0",
+   "description": "Auto-set: Residential = unchecked, Commercial = checked",
+   "fieldname": "is_vat_applicable",
+   "fieldtype": "Check",
+   "label": "VAT Applicable"
+  },
+  {
+   "default": "2",
+   "fieldname": "security_deposit_months",
+   "fieldtype": "Int",
+   "label": "Security Deposit (Months)"
+  },
+  {
+   "fieldname": "tab_dxbek",
+   "fieldtype": "Tab Break",
+   "label": "Tenancy Status"
+  },
+  {
+   "fieldname": "sec_tsuzm",
+   "fieldtype": "Section Break",
+   "label": "Current Occupancy"
+  },
+  {
+   "fieldname": "current_tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Current Tenant",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "description": "Updated via lease workflow",
+   "fieldname": "current_lease",
+   "fieldtype": "Link",
+   "label": "Current Lease",
+   "options": "Lease",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_squyk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vacancy_since",
+   "fieldtype": "Date",
+   "label": "Vacant Since",
+   "read_only": 1
+  },
+  {
+   "description": "Computed daily by occupancy_engine.py",
+   "fieldname": "days_vacant",
+   "fieldtype": "Int",
+   "label": "Days Vacant",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_gbrwb",
+   "fieldtype": "Section Break",
+   "label": "CAFM Computed Metrics"
+  },
+  {
+   "fieldname": "open_service_requests",
+   "fieldtype": "Int",
+   "label": "Open Service Requests",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_maintenance_date",
+   "fieldtype": "Date",
+   "label": "Last Maintenance Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_bdwts",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_revenue_ytd",
+   "fieldtype": "Currency",
+   "label": "Total Revenue YTD",
+   "read_only": 1
+  },
+  {
+   "fieldname": "maintenance_cost_ytd",
+   "fieldtype": "Currency",
+   "label": "Maintenance Cost YTD",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_ezjdd",
+   "fieldtype": "Tab Break",
+   "label": "GCC & Regulatory"
+  },
+  {
+   "fieldname": "sec_dresz",
+   "fieldtype": "Section Break",
+   "label": "Utility & RERA IDs"
+  },
+  {
+   "description": "Dubai RERA unit reference",
+   "fieldname": "ejari_unit_number",
+   "fieldtype": "Data",
+   "label": "Ejari Unit Number"
+  },
+  {
+   "fieldname": "dewa_account_number",
+   "fieldtype": "Data",
+   "label": "DEWA Account Number"
+  },
+  {
+   "fieldname": "col_xsanc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "municipality_unit_code",
+   "fieldtype": "Data",
+   "label": "Municipality Unit Code"
+  },
+  {
+   "fieldname": "tab_jawbl",
+   "fieldtype": "Tab Break",
+   "label": "Photos & Parking"
+  },
+  {
+   "fieldname": "sec_nhmss",
+   "fieldtype": "Section Break",
+   "label": "Unit Photos"
+  },
+  {
+   "fieldname": "unit_photos",
+   "fieldtype": "Table",
+   "label": "Unit Photos",
+   "options": "Unit Photo"
+  },
+  {
+   "fieldname": "sec_iixip",
+   "fieldtype": "Section Break",
+   "label": "Parking Bays"
+  },
+  {
+   "fieldname": "unit_parking_bays",
+   "fieldtype": "Table",
+   "label": "Parking Bay Links",
+   "options": "Unit Parking Bay Link"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-04-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Asset",
+ "name": "Property Unit",
+ "naming_rule": "By naming_series field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Super Admin",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Management Director",
+   "submit": 0,
+   "write": 0
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Head Operations",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Regional Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Supervisor",
+   "submit": 0,
+   "write": 0
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Technician",
+   "submit": 0,
+   "write": 0
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Helpdesk",
+   "submit": 0,
+   "write": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "unit_number",
+ "track_changes": 1
+}

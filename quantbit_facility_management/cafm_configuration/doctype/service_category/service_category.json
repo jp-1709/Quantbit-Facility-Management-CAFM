@@ -1,0 +1,136 @@
+{
+ "actions": [],
+ "autoname": "field:category_name",
+ "creation": "2026-04-07 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sec_aluap",
+  "category_name",
+  "category_code",
+  "col_drpfn",
+  "parent_category",
+  "is_active",
+  "sec_uczqm",
+  "default_sla_policy",
+  "default_checklist_template",
+  "col_nfesz",
+  "calendar_colour",
+  "requires_permit_to_work",
+  "sec_bllro",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "sec_aluap",
+   "fieldtype": "Section Break",
+   "label": "Identity"
+  },
+  {
+   "bold": 1,
+   "fieldname": "category_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Category Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "category_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Category Code"
+  },
+  {
+   "fieldname": "col_drpfn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "For hierarchical grouping",
+   "fieldname": "parent_category",
+   "fieldtype": "Link",
+   "label": "Parent Category",
+   "options": "Service Category"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Active"
+  },
+  {
+   "fieldname": "sec_uczqm",
+   "fieldtype": "Section Break",
+   "label": "SLA & Checklist Defaults"
+  },
+  {
+   "fieldname": "default_sla_policy",
+   "fieldtype": "Link",
+   "label": "Default SLA Policy",
+   "options": "SLA Policy"
+  },
+  {
+   "fieldname": "default_checklist_template",
+   "fieldtype": "Link",
+   "label": "Default Checklist Template",
+   "options": "Checklist Template"
+  },
+  {
+   "fieldname": "col_nfesz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Used in multi-module calendar view",
+   "fieldname": "calendar_colour",
+   "fieldtype": "Color",
+   "label": "Calendar Colour"
+  },
+  {
+   "default": "0",
+   "fieldname": "requires_permit_to_work",
+   "fieldtype": "Check",
+   "label": "Requires Permit to Work"
+  },
+  {
+   "fieldname": "sec_bllro",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "istable": 0,
+ "links": [],
+ "modified": "2026-04-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CAFM Configuration",
+ "name": "Service Category",
+ "naming_rule": "By naming_series field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "category_name",
+ "track_changes": 1
+}

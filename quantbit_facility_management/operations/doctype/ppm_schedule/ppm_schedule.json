@@ -1,0 +1,543 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "field:pm_id",
+ "creation": "2026-04-10 15:41:53.725180",
+ "description": "Planned Preventive Maintenance schedule defining frequency, assignment, and checklist for an asset.",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_general",
+  "pm_id",
+  "col_break_1",
+  "pm_title",
+  "sec_pm_type",
+  "pm_type",
+  "frequency",
+  "col_break_2",
+  "planned_duration_hrs",
+  "checklist_reference",
+  "tab_asset_loc",
+  "sec_asset_pm",
+  "asset_code",
+  "asset_name",
+  "col_break_3",
+  "asset_category",
+  "service_group",
+  "sec_location_pm",
+  "property_code",
+  "property_name",
+  "col_break_4",
+  "zone_code",
+  "sub_zone_code",
+  "base_unit_code",
+  "tab_contract_pm",
+  "sec_client_pm",
+  "client_code",
+  "client_name",
+  "col_break_5",
+  "contract_code",
+  "contract_group",
+  "tab_scheduling",
+  "sec_dates_pm",
+  "last_done_date",
+  "next_due_date",
+  "col_break_6",
+  "overdue_by_days",
+  "sec_assignment_pm",
+  "assigned_to",
+  "assigned_technician",
+  "col_break_7",
+  "ppm_wo_number",
+  "estimated_spares",
+  "tab_status_pm",
+  "sec_pm_status",
+  "status",
+  "col_break_8",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab_general",
+   "fieldtype": "Tab Break",
+   "label": "General Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "pm_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "PM ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pm_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "PM Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_pm_type",
+   "fieldtype": "Section Break",
+   "label": "PM Type & Frequency"
+  },
+  {
+   "fieldname": "pm_type",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "PM Type",
+   "options": "\nPlanned Preventive\nStatutory\nAnnual Service\nInspection",
+   "reqd": 1
+  },
+  {
+   "fieldname": "frequency",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Frequency",
+   "options": "\nDaily\nWeekly\nFortnightly\nMonthly\nBi-Monthly\nQuarterly\nSemi-Annual\nAnnual\nAdHoc",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "planned_duration_hrs",
+   "fieldtype": "Float",
+   "label": "Planned Duration (hrs)"
+  },
+  {
+   "description": "e.g. CHK-CHILLER-Q",
+   "fieldname": "checklist_reference",
+   "fieldtype": "Data",
+   "label": "Checklist Reference"
+  },
+  {
+   "fieldname": "tab_asset_loc",
+   "fieldtype": "Tab Break",
+   "label": "Asset & Location"
+  },
+  {
+   "fieldname": "sec_asset_pm",
+   "fieldtype": "Section Break",
+   "label": "Asset"
+  },
+  {
+   "fieldname": "asset_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Asset",
+   "options": "CFAM Asset",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "asset_code.asset_name",
+   "fieldname": "asset_name",
+   "fieldtype": "Data",
+   "label": "Asset Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "asset_code.asset_category",
+   "fieldname": "asset_category",
+   "fieldtype": "Data",
+   "label": "Asset Category",
+   "read_only": 1
+  },
+  {
+   "fieldname": "service_group",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Service Group"
+  },
+  {
+   "fieldname": "sec_location_pm",
+   "fieldtype": "Section Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "property_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Property",
+   "options": "Property",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "property_code.property_name",
+   "fieldname": "property_name",
+   "fieldtype": "Data",
+   "label": "Property Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "zone_code",
+   "fieldtype": "Link",
+   "label": "Zone",
+   "options": "Zone"
+  },
+  {
+   "fieldname": "sub_zone_code",
+   "fieldtype": "Link",
+   "label": "Sub Zone",
+   "options": "Sub Zone"
+  },
+  {
+   "fieldname": "base_unit_code",
+   "fieldtype": "Link",
+   "label": "Base Unit",
+   "options": "Base Unit"
+  },
+  {
+   "fieldname": "tab_contract_pm",
+   "fieldtype": "Tab Break",
+   "label": "Contract & Client"
+  },
+  {
+   "fieldname": "sec_client_pm",
+   "fieldtype": "Section Break",
+   "label": "Client"
+  },
+  {
+   "fieldname": "client_code",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Client",
+   "options": "Client",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "client_code.client_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "label": "Client Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contract_code",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "options": "FM Contract",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "contract_code.contract_group",
+   "fieldname": "contract_group",
+   "fieldtype": "Data",
+   "label": "Contract Group",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_scheduling",
+   "fieldtype": "Tab Break",
+   "label": "Scheduling & Assignment"
+  },
+  {
+   "fieldname": "sec_dates_pm",
+   "fieldtype": "Section Break",
+   "label": "PM Dates"
+  },
+  {
+   "fieldname": "last_done_date",
+   "fieldtype": "Date",
+   "label": "Last Done Date"
+  },
+  {
+   "fieldname": "next_due_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Next Due Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "overdue_by_days",
+   "fieldtype": "Int",
+   "label": "Overdue By (days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_assignment_pm",
+   "fieldtype": "Section Break",
+   "label": "Assignment"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Assigned To",
+   "options": "Resource"
+  },
+  {
+   "fetch_from": "assigned_to.resource_name",
+   "fieldname": "assigned_technician",
+   "fieldtype": "Data",
+   "label": "Assigned Technician",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ppm_wo_number",
+   "fieldtype": "Link",
+   "label": "Generated WO",
+   "options": "Work Orders",
+   "read_only": 1
+  },
+  {
+   "fieldname": "estimated_spares",
+   "fieldtype": "Currency",
+   "label": "Estimated Spares (OMR)"
+  },
+  {
+   "fieldname": "tab_status_pm",
+   "fieldtype": "Tab Break",
+   "label": "Status & Notes"
+  },
+  {
+   "fieldname": "sec_pm_status",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "default": "Scheduled",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "PM Status",
+   "options": "\nScheduled\nOverdue\nIn Progress\nCompleted\nCancelled\nDeferred",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "PPM Schedule",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-15 10:09:01.676124",
+ "modified_by": "Administrator",
+ "module": "Operations",
+ "name": "PPM Schedule",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Super Admin",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Management Director",
+   "submit": 0,
+   "write": 0
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Head Operations",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Regional Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Supervisor",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Technician",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Helpdesk",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Client Admin",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Client User",
+   "submit": 0,
+   "write": 0
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Vendor Contractor",
+   "submit": 0,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "pm_title,asset_code,property_code,assigned_to,status",
+ "sort_field": "next_due_date",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "pm_title",
+ "track_changes": 1
+}

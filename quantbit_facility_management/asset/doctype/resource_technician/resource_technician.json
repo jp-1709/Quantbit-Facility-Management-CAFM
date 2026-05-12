@@ -1,0 +1,27 @@
+{
+ "description": "Child table: Technicians assigned to a Supervisor.",
+ "doctype": "DocType",
+ "fields": [
+  {
+   "fieldname": "staff_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Staff Code",
+   "options": "Resource",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "staff_code.resource_name",
+   "fieldname": "resource_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Resource Name",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "module": "Asset",
+ "name": "Resource Technician",
+ "permissions": [],
+ "track_changes": 0
+}

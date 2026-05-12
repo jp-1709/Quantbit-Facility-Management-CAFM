@@ -1,0 +1,1 @@
+from .fault_category import FaultCategory

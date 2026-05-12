@@ -1,0 +1,146 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "portal_name",
+ "creation": "2026-04-21 17:00:00",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "portal_name",
+  "portal_token",
+  "is_active",
+  "col_break_1",
+  "notification_email",
+  "sec_presets",
+  "preset_property",
+  "preset_property_name",
+  "preset_asset",
+  "preset_asset_name",
+  "sec_desc",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "portal_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Portal Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "portal_token",
+   "fieldtype": "Data",
+   "label": "Portal Token",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "notification_email",
+   "fieldtype": "Data",
+   "label": "Notification Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "sec_presets",
+   "fieldtype": "Section Break",
+   "label": "Presets"
+  },
+  {
+   "fieldname": "preset_property",
+   "fieldtype": "Link",
+   "label": "Preset Property",
+   "options": "Property"
+  },
+  {
+   "fetch_from": "preset_property.property_name",
+   "fieldname": "preset_property_name",
+   "fieldtype": "Data",
+   "label": "Preset Property Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "preset_asset",
+   "fieldtype": "Link",
+   "label": "Preset Asset",
+   "options": "CFAM Asset"
+  },
+  {
+   "fetch_from": "preset_asset.asset_name",
+   "fieldname": "preset_asset_name",
+   "fieldtype": "Data",
+   "label": "Preset Asset Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sec_desc",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  }
+ ],
+ "links": [],
+ "modified": "2026-04-21 17:56:36.900446",
+ "modified_by": "Administrator",
+ "module": "Operations",
+ "name": "Request Portal",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Super Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "CAFM Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "Head Operations",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

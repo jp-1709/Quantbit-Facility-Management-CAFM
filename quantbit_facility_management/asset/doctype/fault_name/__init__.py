@@ -1,0 +1,1 @@
+from .fault_name import FaultName

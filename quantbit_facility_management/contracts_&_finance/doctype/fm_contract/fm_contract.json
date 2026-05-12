@@ -1,0 +1,362 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "autoname": "format:CON-{YYYY}-{###}",
+ "creation": "2026-04-09 15:16:03.117391",
+ "description": "FM service contract binding a Client to scope, value, and SLA commitments.",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tab_general",
+  "contract_code",
+  "col_break_1",
+  "contract_title",
+  "sec_client_info",
+  "client_code",
+  "client_name",
+  "branch_code",
+  "branch_name",
+  "col_break_2",
+  "contract_group",
+  "contract_type",
+  "tab_dates",
+  "sec_dates",
+  "start_date",
+  "col_break_3",
+  "end_date",
+  "sec_financials",
+  "annual_value",
+  "billing_model",
+  "col_break_4",
+  "fixed_monthly",
+  "payment_status",
+  "tab_sla",
+  "sec_sla_table",
+  "sla_details",
+  "tab_status",
+  "sec_contract_status",
+  "status",
+  "col_break_5",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "tab_general",
+   "fieldtype": "Tab Break",
+   "label": "General Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "contract_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Contract Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "contract_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Contract Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_client_info",
+   "fieldtype": "Section Break",
+   "label": "Client & Scope"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "client_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Client",
+   "options": "Client",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fetch_from": "client_code.client_name",
+   "fieldname": "client_name",
+   "fieldtype": "Data",
+   "label": "Client Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "branch_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fetch_from": "branch_code.branch_name",
+   "fieldname": "branch_name",
+   "fieldtype": "Data",
+   "label": "Branch Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "contract_group",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Contract Group",
+   "options": "\nIFM\nDC Ops\nSoft FM\nHard FM\nMEP Only\nOther"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "contract_type",
+   "fieldtype": "Select",
+   "label": "Contract Type",
+   "options": "\nAnnual AMC\nRetainer\nMulti-Year AMC\nSpot\nCall-Out\nProject Based\nOther"
+  },
+  {
+   "fieldname": "tab_dates",
+   "fieldtype": "Tab Break",
+   "label": "Dates & Value"
+  },
+  {
+   "fieldname": "sec_dates",
+   "fieldtype": "Section Break",
+   "label": "Contract Period"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sec_financials",
+   "fieldtype": "Section Break",
+   "label": "Financial Terms"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "annual_value",
+   "fieldtype": "Currency",
+   "label": "Annual Value (OMR)"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "billing_model",
+   "fieldtype": "Select",
+   "label": "Billing Model",
+   "options": "\nFixed Monthly\nFixed+Variable\nUnit Rate\nLump Sum\nRetainer\nOther"
+  },
+  {
+   "fieldname": "col_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "fixed_monthly",
+   "fieldtype": "Currency",
+   "label": "Fixed Monthly (OMR)"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "\nCurrent\nOverdue\nDisputed\nSettled"
+  },
+  {
+   "fieldname": "tab_sla",
+   "fieldtype": "Tab Break",
+   "label": "SLA Configuration"
+  },
+  {
+   "fieldname": "sec_sla_table",
+   "fieldtype": "Section Break",
+   "label": "SLA Targets by Priority"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "allow_on_submit": 1,
+   "description": "Define Response & Resolution SLA for each priority level",
+   "fieldname": "sla_details",
+   "fieldtype": "Table",
+   "label": "SLA Details",
+   "options": "Contract SLA Detail"
+  },
+  {
+   "fieldname": "tab_status",
+   "fieldtype": "Tab Break",
+   "label": "Status & Tracking"
+  },
+  {
+   "fieldname": "sec_contract_status",
+   "fieldtype": "Section Break",
+   "label": "Status"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Contract Status",
+   "options": "\nDraft\nActive\nExpired\nTerminated\nOn Hold",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "FM Contract",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-04-24 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Contracts & Finance",
+ "name": "FM Contract",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Super Admin",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Management Director",
+   "submit": 0,
+   "write": 0
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Head Operations",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Branch Manager",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 1,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Regional Manager",
+   "submit": 0,
+   "write": 1
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Site Manager",
+   "submit": 0,
+   "write": 0
+  },
+  {
+   "amend": 0,
+   "cancel": 0,
+   "create": 0,
+   "delete": 0,
+   "export": 0,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Client Admin",
+   "submit": 0,
+   "write": 0
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "contract_title,client_code",
+ "sort_field": "start_date",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "contract_title",
+ "track_changes": 1
+}
