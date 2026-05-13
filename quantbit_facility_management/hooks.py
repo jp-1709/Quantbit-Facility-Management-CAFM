@@ -118,8 +118,12 @@ app_license = "mit"
 # Permissions evaluated in scripted ways
 
 permission_query_conditions = {
-	"Work Orders": "quantbit_facility_management.permissions.work_order_query",
-	"Service Request": "quantbit_facility_management.permissions.service_request_query"
+	"Work Orders": "quantbit_facility_management.utils.work_order_permissions.work_order_query",
+	"Service Request": "quantbit_facility_management.utils.work_order_permissions.service_request_query",
+	"CFAM Asset": "quantbit_facility_management.utils.work_order_permissions.asset_query",
+	"Property": "quantbit_facility_management.utils.work_order_permissions.property_query",
+	"PPM Schedule": "quantbit_facility_management.utils.work_order_permissions.ppm_schedule_query",
+	"Resource": "quantbit_facility_management.utils.work_order_permissions.resource_query"
 }
 #
 # has_permission = {

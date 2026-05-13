@@ -14,7 +14,7 @@ class Resource(Document):
 		"""Auto-fill supervised technicians child table when designation is Supervisor"""
 		if self.designation == "Supervisor" and self.get("staff_code"):
 			# Clear existing technicians to avoid duplicates
-			self.technicians = []
+			self.set("technicians", [])
 			
 			# Fetch all technicians who have this supervisor as their supervisor_code
 			technicians = frappe.db.get_all("Resource", 
@@ -32,6 +32,8 @@ class Resource(Document):
 					"staff_code": tech.staff_code,
 					"resource_name": tech.resource_name
 				})
+			
+			return self.technicians
 	
 	@frappe.whitelist()
 	def get_supervised_technicians(self):
@@ -49,12 +51,3 @@ class Resource(Document):
 		)
 
 
-@frappe.whitelist()
-def auto_fill_supervised_technicians_for_resource(doc):
-	"""Standalone function to auto-fill supervised technicians for a Resource document"""
-	if isinstance(doc, str):
-		doc = frappe.parse_json(doc)
-	
-	resource = frappe.get_doc("Resource", doc.get("name"))
-	resource.auto_fill_supervised_technicians()
-	return {"message": "Supervised technicians updated successfully"}
