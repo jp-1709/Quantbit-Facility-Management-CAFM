@@ -25,7 +25,7 @@ frappe.ui.form.on("Resource", {
 		if (frm.doc.designation === "Supervisor") {
 			frm.add_custom_button(__("Refresh Supervised Technicians"), function() {
 				frm.call({
-					method: "quantbit_facility_management.quantbit_facility_management.asset.doctype.resource.resource.auto_fill_supervised_technicians_for_resource",
+					method: "auto_fill_supervised_technicians",
 					doc: frm.doc,
 					callback: function(r) {
 						if (!r.exc) {
@@ -68,7 +68,7 @@ frappe.ui.form.on("Resource", {
 		// Auto-fill supervised technicians when staff_code is set and designation is Supervisor
 		if (frm.doc.designation === "Supervisor" && frm.doc.staff_code) {
 			frm.call({
-				method: "quantbit_facility_management.quantbit_facility_management.asset.doctype.resource.resource.auto_fill_supervised_technicians_for_resource",
+				method: "auto_fill_supervised_technicians",
 				doc: frm.doc,
 				callback: function(r) {
 					if (!r.exc) {
