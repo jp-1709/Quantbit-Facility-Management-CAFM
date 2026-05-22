@@ -47,7 +47,8 @@
   "sec_service_group",
   "service_group_code",
   "col_break_7",
-  "asset_image"
+  "asset_image",
+  "amended_from"
  ],
  "fields": [
   {
@@ -86,7 +87,7 @@
    "fieldtype": "Select",
    "in_standard_filter": 1,
    "label": "Asset Master Category",
-   "options": "\nMEP\nBanking Equipment\nIT Infrastructure\nCivil\nElectrical\nSecurity\nFire & Safety\nOther",
+   "options": "\nMEP\nBanking Equipment\nIT Infrastructure\nCivil\nElectrical\nSecurity\nFire & Safety\nMedical Gas\nCSSD\nBiomedical\nOther",
    "reqd": 1
   },
   {
@@ -292,10 +293,21 @@
    "label": "QR Code URL",
    "no_copy": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "CFAM Asset",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
+ "is_submittable": 1,
  "links": [],
- "modified": "2026-04-24 00:00:00.000000",
+ "modified": "2026-05-18 11:22:48.036051",
  "modified_by": "Administrator",
  "module": "Asset",
  "name": "CFAM Asset",
@@ -338,17 +350,10 @@
    "write": 1
   },
   {
-   "amend": 0,
-   "cancel": 0,
-   "create": 0,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Management Director",
-   "submit": 0,
-   "write": 0
+   "role": "Management Director"
   },
   {
    "amend": 1,
@@ -403,82 +408,40 @@
    "write": 1
   },
   {
-   "amend": 0,
-   "cancel": 0,
-   "create": 0,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Supervisor",
-   "submit": 0,
-   "write": 0
+   "role": "Supervisor"
   },
   {
-   "amend": 0,
-   "cancel": 0,
-   "create": 0,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Technician",
-   "submit": 0,
-   "write": 0
+   "role": "Technician"
   },
   {
-   "amend": 0,
-   "cancel": 0,
-   "create": 0,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Helpdesk",
-   "submit": 0,
-   "write": 0
+   "role": "Helpdesk"
   },
   {
-   "amend": 0,
-   "cancel": 0,
-   "create": 0,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Client Admin",
-   "submit": 0,
-   "write": 0
+   "role": "Client Admin"
   },
   {
-   "amend": 0,
-   "cancel": 0,
-   "create": 0,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Client User",
-   "submit": 0,
-   "write": 0
+   "role": "Client User"
   },
   {
-   "amend": 0,
-   "cancel": 0,
-   "create": 0,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Vendor Contractor",
-   "submit": 0,
-   "write": 0
+   "role": "Vendor Contractor"
   }
  ],
  "row_format": "Dynamic",

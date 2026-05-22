@@ -42,7 +42,8 @@
   "col_break_5",
   "contract_code",
   "sec_status",
-  "is_active"
+  "is_active",
+  "amended_from"
  ],
  "fields": [
   {
@@ -83,7 +84,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Property Type",
-   "options": "\nHeadquarters\nBranch\nData Centre\nWarehouse\nRemote ATM Site\nOffice\nATM Kiosk\nOther",
+   "options": "\nMain Hospital\nAnnexe Building",
    "reqd": 1
   },
   {
@@ -267,10 +268,21 @@
    "fieldtype": "Check",
    "in_list_view": 1,
    "label": "Is Active"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Property",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
+ "is_submittable": 1,
  "links": [],
- "modified": "2026-04-24 00:00:00.000000",
+ "modified": "2026-05-17 22:59:31.971793",
  "modified_by": "Administrator",
  "module": "Asset",
  "name": "Property",
@@ -313,17 +325,10 @@
    "write": 1
   },
   {
-   "amend": 0,
-   "cancel": 0,
-   "create": 0,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Management Director",
-   "submit": 0,
-   "write": 0
+   "role": "Management Director"
   },
   {
    "amend": 1,
@@ -378,43 +383,22 @@
    "write": 1
   },
   {
-   "amend": 0,
-   "cancel": 0,
-   "create": 0,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Supervisor",
-   "submit": 0,
-   "write": 0
+   "role": "Supervisor"
   },
   {
-   "amend": 0,
-   "cancel": 0,
-   "create": 0,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Technician",
-   "submit": 0,
-   "write": 0
+   "role": "Technician"
   },
   {
-   "amend": 0,
-   "cancel": 0,
-   "create": 0,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Helpdesk",
-   "submit": 0,
-   "write": 0
+   "role": "Helpdesk"
   }
  ],
  "row_format": "Dynamic",

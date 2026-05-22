@@ -291,7 +291,7 @@
  ],
  "row_format": "Dynamic",
  "search_fields": "fault_code,fault_description,service_group,fault_category",
- "sort_field": "service_group_code",
+ "sort_field": "service_group",
  "sort_order": "ASC",
  "states": [],
  "title_field": "fault_description",

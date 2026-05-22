@@ -43,7 +43,8 @@
   "email",
   "user_id",
   "sec_status",
-  "is_active"
+  "is_active",
+  "amended_from"
  ],
  "fields": [
   {
@@ -67,8 +68,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Branch",
-   "options": "Branch",
-   "reqd": 0
+   "options": "Branch"
   },
   {
    "fetch_from": "branch_code.branch_name",
@@ -104,7 +104,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Designation",
-   "options": "\nSupervisor\nLead Technician\nTechnician\nSub-Contractor\nHelpers\nDriver\nAdmin Staff\nHSEQ Officer\nSite Coordinator",
+   "options": "\nSupervisor\nLead Technician\nTechnician\nSub-Contractor\nHelpers\nDriver\nAdmin Staff\nHSEQ Officer\nSite Coordinator\nSenior MEP Engineer\nHVAC Technician\nElectrical Engineer\nMedical Gas Technician\nPlumbing Technician\nBiomedical Equipment Tech\nFire & Safety Technician\nCSSD Technician\nSoft Services Supervisor\nOT Cleaning Specialist\nFM Supervisor\nSr MEP Engineer Aster BLR\nHVAC Specialist Aster BLR\nElectrical Tech Aster BLR\nMedical Gas Aster BLR\nBiomedical Engr Aster BLR\nSoft Services Mgr Aster BLR\nMEP Tech Aster Dubai\nMedical Gas Aster Dubai\nMEP Tech Aster Muscat",
    "reqd": 1
   },
   {
@@ -112,7 +112,7 @@
    "fieldtype": "Select",
    "in_standard_filter": 1,
    "label": "Department",
-   "options": "\nTechnical\nSoft Services\nOperations\nManagement\nAdmin\nHSEQ"
+   "options": "\nTechnical\nSoft Services\nOperations\nManagement\nAdmin\nHSEQ\nBiomedical"
   },
   {
    "fieldname": "col_break_2",
@@ -136,7 +136,6 @@
    "description": "Supervisor responsible for this technician. Set on Technician records to link them to their Supervisor.",
    "fieldname": "supervisor_code",
    "fieldtype": "Link",
-   "in_list_view": 0,
    "in_standard_filter": 1,
    "label": "Supervisor",
    "options": "Resource"
@@ -274,10 +273,21 @@
    "fieldtype": "Check",
    "in_list_view": 1,
    "label": "Is Active"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Resource",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
+ "is_submittable": 1,
  "links": [],
- "modified": "2026-05-11 00:00:00.000000",
+ "modified": "2026-05-18 12:06:55.206870",
  "modified_by": "Administrator",
  "module": "Asset",
  "name": "Resource",
@@ -305,17 +315,10 @@
    "write": 1
   },
   {
-   "amend": 0,
-   "cancel": 0,
-   "create": 0,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Management Director",
-   "submit": 0,
-   "write": 0
+   "role": "Management Director"
   },
   {
    "amend": 1,
@@ -344,40 +347,28 @@
    "write": 1
   },
   {
-   "amend": 0,
-   "cancel": 0,
    "create": 1,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Regional Manager",
-   "submit": 0,
    "write": 1
   },
   {
-   "amend": 0,
-   "cancel": 0,
    "create": 1,
-   "delete": 0,
-   "export": 0,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Site Manager",
-   "submit": 0,
    "write": 1
   },
   {
    "read": 1,
-   "role": "Supervisor",
-   "write": 0
+   "role": "Supervisor"
   },
   {
    "read": 1,
-   "role": "Technician",
-   "write": 0
+   "role": "Technician"
   }
  ],
  "row_format": "Dynamic",
